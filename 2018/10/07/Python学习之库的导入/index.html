@@ -144,7 +144,21 @@
 <li>可选导入 (optional imports)</li>
 <li>本地导入 (local imports)</li>
 </ul>
-<h2 id="常规导入"><a href="#常规导入" class="headerlink" title="常规导入"></a>常规导入</h2>
+<h2 id="常规导入"><a href="#常规导入" class="headerlink" title="常规导入"></a>常规导入</h2><p>常规导入也就时我们最常使用的一种方式，例如，我们需要导入turtle模块的时候只需要输入：<br><code>import turtle</code><br>通过这种方式，我们可以同时导入多个模块，例如：<br><code>import turtle, math, sys</code><br>这样虽然仅仅使用一行代码就可以导入多个模块，但是却违背了<br><strong><a href="https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/contents/" target="_blank" rel="noopener">Python风格指南</a>中建议将每个导入语句单独成行的要求</strong>。</p>
+<ul>
+<li>如何在导入时重命名模块？</li>
+</ul>
+<p>以turtle为例，我们只需要在导入时输入如下代码即可：<br><code>import turtle as t</code><br>这样就可以将turtle重命名为t，在调用的时候就只需要输入<br><code>t.forwad(100)</code><br>之类的命令就可以了。</p>
+<ul>
+<li>如何导入子模块？<br><code>import urllib.error</code></li>
+</ul>
+<h2 id="使用from语句导入"><a href="#使用from语句导入" class="headerlink" title="使用from语句导入"></a>使用from语句导入</h2><p>大多数时候，我们只需要导入Python某个模块或者库的某个部分，那么则需要如下方式：<br><code>form functools import lru_cache</code><br>这样我们就可以只导入functools中的lru_cache，并且可以直接调用lru_cache，而不必像下面这样：<br><code>functools.lru_cache(*args)</code><br>具体采用哪种方式，依据实际情况为而定。<br>例如：采用第一种方式导入更适合代码简单，模块化高的使用场景，可以减少代码量；第二种方法适合代码复杂的场景，可以更加容易区分出具体是哪一个函数。</p>
+<p>此外，采用这种方式还可以将某个库或者模块中的函数全部导入，比如：<br><code>from turtle import *</code><br>表示导入turtle中的所有函数，采用这样的方法，更适合只使用单一模块或者库时采用，这样的好处是可以减少代码量，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import turtle</span><br><span class="line"># 传统方法</span><br><span class="line">turtle.forward(100)</span><br><span class="line">---------------------</span><br><span class="line">from turtle import *</span><br><span class="line"># 全部导入方法</span><br><span class="line">forward(100)</span><br></pre></td></tr></table></figure></p>
+<p><strong>这样的缺点也显而易见：当程序较为复杂时，不利于代码维护，更要命的是，可能会有函数命名上的冲突</strong></p>
+<h2 id="相对导入"><a href="#相对导入" class="headerlink" title="相对导入"></a>相对导入</h2><p>暂未接触，后续更新</p>
+<h2 id="可选导入"><a href="#可选导入" class="headerlink" title="可选导入"></a>可选导入</h2><p>暂未接触，后续更新</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>待更新</p>
+
         </div>
       </article>
     </div>
